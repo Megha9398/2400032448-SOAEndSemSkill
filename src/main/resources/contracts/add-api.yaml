@@ -1,0 +1,34 @@
+openapi: 3.0.3
+
+info:
+  title: Addition API
+  description: API contract for addition operation
+  version: 1.0.0
+
+paths:
+  /api/add:
+    get:
+      summary: Add two numbers
+      parameters:
+        - name: a
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: b
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful addition
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+              example:
+                result: 30
